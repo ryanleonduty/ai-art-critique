@@ -69,7 +69,7 @@ st.sidebar.markdown("""
 ### How to use:
 1. Enter your OpenAI API Key.
 2. Enter the URL of the image you want critiqued.
-3. Enter your question about the artwork.
+3. Choose a predefined question or enter your custom question about the artwork.
 4. Click 'Analyze Artwork'.
 5. View the AI-generated critique.
 """)
