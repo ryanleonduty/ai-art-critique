@@ -1,1 +1,1 @@
-# ai-art-critique
+# AI Art Critique
