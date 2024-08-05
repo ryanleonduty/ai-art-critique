@@ -24,6 +24,12 @@ with st.sidebar:
 
 def analyze_artwork_with_gpt4o(image_url):
     client = OpenAI(api_key=api_key)
+    prompt = f"""If the question '{image_question}' is irrelevant to the artwork, please respond with:
+    'The question is not applicable to this artwork. Please submit another question.'
+
+    Otherwise, please analyze the artwork by addressing the following question:
+    {image_question}
+    """
     try:
         response = client.chat.completions.create(
         model="gpt-4o",
@@ -31,7 +37,7 @@ def analyze_artwork_with_gpt4o(image_url):
             {
             "role": "user",
             "content": [
-                {"type": "text", "text": image_question},
+                {"type": "text", "text": prompt},
                 {
                 "type": "image_url",
                 "image_url": {
